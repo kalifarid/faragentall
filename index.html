@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faragentall - Qlobal Avtonom İstehsal Mərkəzi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white font-sans min-h-screen flex flex-col items-center justify-between p-6">
+
+    <!-- Header -->
+    <header class="w-full max-w-4xl text-center py-8">
+        <h1 class="text-4xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+            FARAGENTALL OS
+        </h1>
+        <p class="text-slate-400 mt-2">Kino, Animasiya, Vebsayt, Tətbiq və Hər Şey - Sərhədsiz Yaradılış Mərkəzi</p>
+    </header>
+
+    <!-- Main Box -->
+    <main class="w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl">
+        <div class="mb-4">
+            <label class="block text-slate-300 text-sm font-semibold mb-2">Nə yaratmaq istəyirsən? (İstəyini ətraflı yaz):</label>
+            <textarea id="userPrompt" rows="4" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 text-white focus:outline-none focus:border-cyan-500 transition" placeholder="Məsələn: Kiberməkan haqqında 2 dəqiqəlik qısametrajlı film ssenarisi və vizual planı..."></textarea>
+        </div>
+        
+        <button onclick="generateContent()" class="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 text-white font-bold py-3 rounded-xl transition shadow-lg">
+            Sistemi İşə Sal və Yarad!
+        </button>
+
+        <!-- Output Result -->
+        <div class="mt-6">
+            <h3 class="text-slate-400 text-sm font-semibold mb-2">Sistemin Cavabı / Nəticə:</h3>
+            <div id="outputResult" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-cyan-300 min-h-[120px] whitespace-pre-wrap text-sm">
+                Burada Faragentall sisteminin cavabı görünəcək...
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-slate-600 text-xs py-4">
+        &copy; 2026 Faragentall Global System. 100% Pulsuz və Açıq Mənbə.
+    </footer>
+
+    <script>
+        function generateContent() {
+            const prompt = document.getElementById('userPrompt').value;
+            const output = document.getElementById('outputResult');
+            
+            if(!prompt.trim()) {
+                alert("Zəhmət olmasa bir istək yazın!");
+                return;
+            }
+
+            output.innerText = "İstək qəbul edildi. Faragentall agentləri işə düşdü, emal olunur...";
+            
+            // Simulyasiya və ya gələcək bulud API bağlantısı
+            setTimeout(() => {
+                output.innerText = `[UĞURLU İŞLƏNDİ]\nİstəyiniz: "${prompt}"\n\nSistem bu istək əsasında struktur planını, vizual təsvirləri və kod bazasını hazırladı. (Növbəti mərhələdə buraya tam avtomatlaşdırılmış AI cavabları qoşulacaq).`;
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
